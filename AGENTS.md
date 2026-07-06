@@ -57,3 +57,11 @@
   - All MongoDB operations must target only the local database referenced by `db`.
   - Do not read, query, aggregate, export, mutate, or inspect any other MongoDB database, including `admin`, `config`, and `local`, unless I explicitly request it.
   - Before any MongoDB write operation, state the exact target database and collection.
+
+## README Guidance
+
+  - README files should stay high-level and summarize the broader information.
+  - Do not duplicate detailed content that already exists in other markdown files.
+  - When details are needed, link or refer to the source markdown file instead of repeating the information.
+  - README files should describe the repository content and purpose, not explain why or how the README was written.
+  - README files should not refer to themselves or explain the README content as content.

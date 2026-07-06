@@ -2,9 +2,7 @@
 
 `agent-toolkit` is a small instruction repository for shared Codex working rules.
 
-At the moment it contains one source of truth:
-
-- [`AGENTS.md`](./AGENTS.md) for development, Git, Jira, and MongoDB safety rules
+It contains the shared instruction file in [`AGENTS.md`](./AGENTS.md) and workspace-wide conventions for daily agent work.
 
 ## What this repo is for
 
@@ -14,8 +12,7 @@ At the moment it contains one source of truth:
 
 ## Current rules covered
 
-- SCSS structure and formatting
-- JSX ternary usage
+- SCSS, JSX, and TypeScript style guidance
 - Git safety and remote-write restrictions
 - Jira access and mutation safety
 - MongoDB database restrictions
@@ -23,4 +20,4 @@ At the moment it contains one source of truth:
 ## Notes
 
 - This repository currently has no application code.
-- If new tooling or templates are added later, document them here and keep `AGENTS.md` as the authoritative rule file.
+- `AGENTS.md` is the authoritative rule file for shared working conventions.
