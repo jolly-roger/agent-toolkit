@@ -11,6 +11,14 @@
 
 - JSX markup ternary operators must not contain nested ternary operators.
 
+## TypeScript Rules
+
+- Avoid using `Omit` when creating interfaces or types.
+- Use `Omit` only as a last resort when there is no practical alternative.
+- Prefer flat interfaces over deeply composed ones.
+- Split interfaces into smaller reusable interfaces when that improves clarity or reuse.
+- Use `type` only for plain combinations of interfaces that do not rely on helper types or advanced type composition.
+
 ## Git Safety
 
   - Git read operations against remotes are allowed when useful, including `git fetch`, `git ls-remote`, and reading remote refs.
