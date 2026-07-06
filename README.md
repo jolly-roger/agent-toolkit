@@ -13,6 +13,7 @@ It contains the shared instruction file in [`AGENTS.md`](./AGENTS.md) and worksp
 ## Current rules covered
 
 - SCSS, JSX, and TypeScript style guidance
+- Functional programming rules for shared code
 - Git safety and remote-write restrictions
 - Jira access, latest-ticket context, and mutation safety
 - MongoDB database restrictions

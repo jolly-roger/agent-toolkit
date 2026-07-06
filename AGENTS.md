@@ -11,6 +11,11 @@
 
 - JSX markup ternary operators must not contain nested ternary operators.
 
+## Functional Programming Rules
+
+- Functions should not mutate their parameters.
+- Function parameters should be used only as source data to calculate or build the value returned from the function.
+
 ## TypeScript Rules
 
 - Avoid using `Omit` when creating interfaces or types.
