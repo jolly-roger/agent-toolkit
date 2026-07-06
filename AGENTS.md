@@ -48,6 +48,8 @@
   - Treat Jira as assigned-to-me only by default.
   - Every Jira search must include `assignee = currentUser()` unless I explicitly request a broader query.
   - Before reading or mutating a specific Jira issue, verify its assignee is `currentUser()`.
+  - Before implementation, fetch the latest ticket data when needed and use it as part of the implementation context.
+  - In other cases, a cached ticket version may be used if one is already available.
   - If assignee verification is unavailable or the issue is not assigned to me, ask before proceeding.
   - Never mutate Jira issues not assigned to me unless I explicitly name the issue and request the mutation.
 

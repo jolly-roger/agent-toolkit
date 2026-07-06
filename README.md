@@ -14,7 +14,7 @@ It contains the shared instruction file in [`AGENTS.md`](./AGENTS.md) and worksp
 
 - SCSS, JSX, and TypeScript style guidance
 - Git safety and remote-write restrictions
-- Jira access and mutation safety
+- Jira access, latest-ticket context, and mutation safety
 - MongoDB database restrictions
 
 ## Notes
