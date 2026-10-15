@@ -1,22 +1,5 @@
 # Development Rules
 
-## Shared Skills
-
-<skill>
-<name>review</name>
-<path>/Users/jolly-roger/projects/aio/agent-toolkit/skills/review/SKILL.md</path>
-</skill>
-
-<skill>
-<name>review-diff</name>
-<path>/Users/jolly-roger/projects/aio/agent-toolkit/skills/review-diff/SKILL.md</path>
-</skill>
-
-<skill>
-<name>merge-master</name>
-<path>/Users/jolly-roger/projects/aio/agent-toolkit/skills/merge-master/SKILL.md</path>
-</skill>
-
 ## SCSS Rules
 
 - The main class in a component SCSS file must use the component name in kebab case.
