@@ -28,7 +28,7 @@ Use `--dry-run` to preview changes or `--yes` for unattended installation. The i
 ## Current rules covered
 
 - SCSS, JSX, and TypeScript style guidance
-- Functional programming rules for shared code
+- Pragmatic functional-programming rules and detailed implementation guidance
 - Shared Codex skills for common workflows
 - Git safety and remote-write restrictions
 - Jira access, latest-ticket context, and mutation safety

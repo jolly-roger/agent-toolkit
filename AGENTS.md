@@ -11,10 +11,22 @@
 
 - JSX markup ternary operators must not contain nested ternary operators.
 
-## Functional Programming Rules
+## Pragmatic Functional Programming Rules
 
-- Functions should not mutate their parameters.
-- Function parameters should be used only as source data to calculate or build the value returned from the function.
+For every coding task, including new code generation, feature implementation, bug fixes, modifications, optimization, tests, code review, and refactoring, apply pragmatic functional programming in any language.
+
+Before changing, generating, or reviewing code, read the `pragmatic-functional-programming` skill when it is accessible. Consult its reference documents selectively as relevant. If the skill is unavailable, still apply these defaults:
+
+- Distinguish data, deterministic calculations, and actions with side effects.
+- Prefer pure domain logic, immutable boundaries, and explicit state transitions when practical.
+- Do not mutate caller-owned inputs unexpectedly; keep dependencies explicit and isolate I/O and other effects at understandable boundaries.
+- Prefer readable composition, clear domain models, and idiomatic error handling.
+- Validate untrusted inputs at boundaries and preserve contracts and observable behavior unless the requested change intentionally updates them.
+- Respect existing architecture, framework conventions, performance, concurrency, and operational requirements.
+- Allow classes, loops, owned local mutation, and other imperative constructs when clearer or idiomatic.
+- Do not introduce FP libraries, unnecessary abstractions, or unrelated refactoring.
+
+Prioritize correctness, project conventions, readability, maintainability, simplicity, and testability over functional purity.
 
 ## TypeScript Rules
 

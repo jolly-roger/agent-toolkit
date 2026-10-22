@@ -25,7 +25,10 @@ class InstallerTests(unittest.TestCase):
             self.assertIn("# Project rules\n\nKeep this rule.", installed)
             self.assertIn("<!-- agent-toolkit:begin -->", installed)
             self.assertIn("## Git Safety", installed)
-            for name in ("review", "review-diff", "merge-master"):
+            for name in (
+                "review", "review-diff", "merge-master",
+                "pragmatic-functional-programming",
+            ):
                 link = Path(directory) / ".agents" / "skills" / name
                 self.assertTrue(link.is_symlink())
                 self.assertEqual(link.resolve(), INSTALLER.parent / "skills" / name)
