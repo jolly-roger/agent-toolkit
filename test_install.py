@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -88,6 +89,31 @@ class InstallerTests(unittest.TestCase):
             self.assertIn("skill path already exists", result.stderr)
             self.assertFalse((Path(directory) / "AGENTS.md").exists())
             self.assertEqual((skill / "SKILL.md").read_text(), "Local skill\n")
+
+    def test_self_install_preserves_source_and_is_repeatable(self):
+        with tempfile.TemporaryDirectory() as directory:
+            toolkit = Path(directory) / "agent-toolkit"
+            toolkit.mkdir()
+            shutil.copy2(INSTALLER, toolkit / "install.py")
+            shutil.copy2(INSTALLER.parent / "AGENTS.md", toolkit / "AGENTS.md")
+            shutil.copytree(INSTALLER.parent / "skills", toolkit / "skills")
+            original = (toolkit / "AGENTS.md").read_bytes()
+            command = [
+                sys.executable, str(toolkit / "install.py"),
+                "--workspace", str(toolkit), "--yes",
+            ]
+
+            first = subprocess.run(command, capture_output=True, text=True, check=True)
+            second = subprocess.run(command, capture_output=True, text=True, check=True)
+
+            self.assertIn("Installed agent-toolkit", first.stdout)
+            self.assertIn("Already up to date", second.stdout)
+            self.assertEqual(original, (toolkit / "AGENTS.md").read_bytes())
+            for source in (toolkit / "skills").iterdir():
+                if source.is_dir() and (source / "SKILL.md").is_file():
+                    link = toolkit / ".agents" / "skills" / source.name
+                    self.assertTrue(link.is_symlink())
+                    self.assertEqual(source.resolve(), link.resolve())
 
 
 if __name__ == "__main__":

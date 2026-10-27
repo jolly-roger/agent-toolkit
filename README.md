@@ -21,6 +21,14 @@ python3 /path/to/agent-toolkit/install.py --workspace /path/to/workspace
 
 When the toolkit is inside the workspace, `--workspace` can be omitted; the installer defaults to the toolkit's parent directory. It previews the root `AGENTS.md` change and the skill links, then asks before applying either. Project-specific instructions outside the `agent-toolkit` markers are preserved. Run the installer again after changing shared rules; it replaces only its marked section. A repeated install with no source changes does nothing.
 
+To use the toolkit while developing it, install it into its own repository:
+
+```bash
+python3 install.py --workspace .
+```
+
+Self-installation leaves the authoritative `AGENTS.md` unchanged and creates only the skill links under `.agents/skills/`. Those generated links are ignored by Git in this repository.
+
 Each skill in `skills/` gets a relative directory symlink at `<workspace>/.agents/skills/<name>`. Codex and Antigravity both discover workspace skills there. Existing local skills are never replaced; a name conflict stops installation so it can be resolved first. The links keep the toolkit as the single source for skill updates.
 
 Use `--dry-run` to preview changes or `--yes` for unattended installation. The installer requires Python 3 and no third-party packages.

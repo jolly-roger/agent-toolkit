@@ -124,10 +124,11 @@ def main() -> int:
     target = workspace / "AGENTS.md"
     if target.is_symlink():
         parser.error(f"refusing to replace symlink: {target}")
+    self_install = workspace == TOOLKIT
 
     try:
         before = target.read_text(encoding="utf-8") if target.exists() else ""
-        after = updated_content(before, managed_block())
+        after = before if self_install else updated_content(before, managed_block())
         links = skill_links(workspace)
     except (OSError, UnicodeError, ValueError) as error:
         parser.error(str(error))
